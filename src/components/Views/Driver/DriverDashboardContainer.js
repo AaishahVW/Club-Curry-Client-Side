@@ -4,7 +4,9 @@ import DriverDashboardHeader from './DriverDashboardHeader';
 import './DriverDashboardContainer.css'; // Import the CSS file for styling
 
 const DriverDashboardContainer = ({ onLogout }) => {
+  // State to hold delivery data
   const [deliveries, setDeliveries] = useState([
+    
     // Expanded sample delivery data
     {
       deliveryId: 1,
@@ -45,8 +47,10 @@ const DriverDashboardContainer = ({ onLogout }) => {
     // Add more sample data as needed
   ]);
 
+  // State to manage the search term for filtering completed deliveries
   const [searchTerm, setSearchTerm] = useState('');
 
+  // Function to update the status of a delivery
   const handleUpdateStatus = (deliveryId, newStatus) => {
     const currentTime = newStatus === 'delivered' ? new Date().toLocaleString() : null;
     setDeliveries((prevDeliveries) =>
@@ -58,22 +62,27 @@ const DriverDashboardContainer = ({ onLogout }) => {
     );
   };
 
+  // Function to handle changes in the search input
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
+  // Filter deliveries to get outstanding (not delivered) deliveries
   const outstandingDeliveries = deliveries.filter(
     (delivery) => delivery.status !== 'delivered'
   );
 
+  // Filter deliveries to get completed (delivered) deliveries
   const deliveredDeliveries = deliveries.filter(
     (delivery) => delivery.status === 'delivered'
   );
 
+  // Further filter completed deliveries based on the search term
   const filteredDeliveredDeliveries = deliveredDeliveries.filter(delivery =>
     delivery.orderId.toString().includes(searchTerm)
   );
 
+  // Calculate the total number of new and completed orders
   const totalNewOrders = outstandingDeliveries.length;
   const totalCompletedOrders = deliveredDeliveries.length;
 
