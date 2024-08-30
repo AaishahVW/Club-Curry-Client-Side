@@ -19,32 +19,35 @@ const Review = ({ review }) => (
   </Card>
 );
 
+// PropTypes for the Review component to validate props
 Review.propTypes = {
   review: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    note: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,  // Unique ID of the review
+    note: PropTypes.string.isRequired, // Review comments
     customer: PropTypes.shape({
-      name: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired // Name of the customer who wrote the review
     }).isRequired,
     rating: PropTypes.shape({
-      foodQuality: PropTypes.number.isRequired,
-      serviceQuality: PropTypes.number.isRequired,
-      atmosphereQuality: PropTypes.number.isRequired
+      foodQuality: PropTypes.number.isRequired,       // Food quality rating
+      serviceQuality: PropTypes.number.isRequired,    // Service quality rating
+      atmosphereQuality: PropTypes.number.isRequired  // Atmosphere quality rating
     }).isRequired
   }).isRequired,
 };{/*changed definition to be in line with the database */}
 
+// ReviewSection component to fetch and display reviews
 const ReviewSection = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // useEffect hook to fetch reviews from the API when the component mounts
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/ClubCurry/review/getAll'); // Replace with actual API endpoint
+        const response = await axios.get('http://localhost:8080/ClubCurry/review/getAll'); // Get the actual API endpoint
         console.log(response);
-        setReviews(response.data);
+        setReviews(response.data); // Update the state with the fetched reviews
       } catch (err) {
         setError(err.message);
       } finally {

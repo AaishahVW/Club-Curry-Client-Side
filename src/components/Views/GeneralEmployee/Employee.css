@@ -1,11 +1,24 @@
-.container {
+.employee-container {
     display: flex;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    max-width: none;
+    padding: 0px;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
 }
 
 .side-nav {
+    margin-left: -80%;
     width: 20%;
-    background-color: #f4f4f4;
+    background: rgb(255,244,2);
+    background: linear-gradient(0deg, rgba(255,244,2,1) 0%, rgba(150,39,39,1) 40%, rgba(185,15,15,1) 100%);
     padding: 20px;
+    position: fixed;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .side-nav ul {
@@ -14,33 +27,50 @@
 }
 
 .side-nav li {
-    margin-bottom: 10px;
+    margin-top: 50px;
 }
 
 .side-nav a {
+    display: block;
     text-decoration: none;
     color: #333;
+    padding: 15px 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff; 
+    transition: background-color 0.2s ease, color 0.3s ease;
 }
 
-.take-order-btn {
-    margin-top: 20px;
+.side-nav a:hover {
+    background-color: #9e9400;
+    color: #fff; 
+}
+
+.side-nav a.active {
     background-color: #10921b;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    color: white; 
+    border-color: #10921b; 
 }
 
-.main-content {
-    width: 100%;
+.employee-header {
+    color: #000;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 3.5em;
+}
+
+.employee-main-content {
+    margin-left: 25%;
+    width: 100%; 
     padding: 20px;
+    margin-right: 0;
 }
 
 .category-grid {
     display: flex;
-    flex-wrap: wrap;
+    width: 100%;
     gap: 35px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .category-block {
@@ -55,13 +85,19 @@
     cursor: pointer;
 }
 
+.category-block:hover {
+    background-color: #6e1c1c;
+    transition: ease-in 0.1s;
+}
+
 .category-block i {
     font-size: 35px;
 }
 
 .order-summary {
-    margin-top: 20px;
+    margin-top: 40px;
     background-color: #f3f3f3;
+    border: 2px solid #3f3f3f;
     color: #000;
     padding: 20px;
     border-radius: 10px;
@@ -89,12 +125,14 @@
 
 .total {
     font-weight: bold;
+    font-size: 1.5em;
     margin-top: 10px;
 }
 
-.checkout-btn {
+.emp-checkout-btn {
     margin-top: 20px;
     background-color: #10921b;
+    width: 20%;
     color: white;
     border-radius: 5px;
     border: none;
@@ -102,20 +140,83 @@
     cursor: pointer;
 }
 
+.emp-checkout-btn:hover {
+    background-color: #0a6914;
+    transition: ease-in 0.1s;
+}
+
+.orders-header {
+     color: #000;
+}
+
 .orders-section {
     margin-top: 20px;
 }
 
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th {
+    background-color: #c95a5a;
+    color: #fefefe;
+}
+
+.order-table th, .order-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.order-summary .total {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    color: #fff;
+}
+
+.btn-remove {
+    background-color: #ff0303;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn-remove:hover {
+    background-color: #c40000;
+    transition: ease 0.3s;
+}
+
+
 .order-card {
-    border: 1px solid #ddd;
+    border: 2px solid #3f3f3f;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #d1cfcf;
+    background-color: #f5f4f4;
     color: #000;
     border-radius: 10px;
 }
 
-.modal {
+.employee-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -128,51 +229,68 @@
     color: #000000;
 }
 
-.modal-content {
+.employee-modal-content {
     background: white;
     padding: 10px;
     border-radius: 5px;
     width: 80%;
     max-width: 600px;
+    position: relative;
 }
 
-.modal-content .close {
+.employee-modal-content .close {
     position: absolute;
-    color: #000;
     top: 10px;
     right: 10px;
+    background-color: #f5f5f5;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 23px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-form {
+.employee-modal-content .close:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.employee-form {
     padding: 20px;
+    background-color: #fff;
 }
 
-.tab {
+.employee-tab {
     display: flex;
-
+    
 }
 
-.tab button {
+.employee-tab button {
     padding: 10px 20px;
     border: none;
     background-color: #ddd;
     cursor: pointer;
 }
 
-.tab button.active {
+.employee-tab button.active {
     background-color: #4c7379;
     color: white;
 }
 
-.menu-item {
+.employee-menu-item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
     color: #000;
 }
 
-.menu-item button {
+.employee-menu-item button {
     background-color: #6ca4a7;
     color: white;
     border: none;
@@ -180,34 +298,33 @@ form {
     cursor: pointer;
 }
 
-.menu-item button:hover {
+.employee-menu-item button:hover {
     background-color: #5a8a91;
 }
 
-.form-group {
+.employee-form-group {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.form-group label {
+.employee-form-group label {
     margin-bottom: 5px;
     color: #000;
     padding-top: 5px;
 }
 
 
-.form-group input {
+.employee-form-group input {
     width: 100%;
     padding-bottom: 5px;
     padding-left: 10px;
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 10px;
-    width: 100%;
 }
 
-.modal-content button {
+.employee-modal-content button {
     padding: 10px 20px;
     background-color: #6ca4a7;
     border-radius: 5px;
@@ -217,6 +334,21 @@ form {
     margin-top: 10px;
 }
 
-.modal-content button:hover {
+.employee-modal-content button:hover {
     background-color: #5a8a91;
+}
+
+.confirm-btn {
+    margin-top: 20px;
+    background-color: #10921b;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.confirm-btn:hover {
+    background-color: #0a6914;
+    transition: ease-in 0.1s;
 }

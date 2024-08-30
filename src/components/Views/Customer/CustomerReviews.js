@@ -3,7 +3,10 @@ import { Modal, Button, Form, Alert, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import '../Customer/CustomerCss/CustomerReviews.css'; // Ensure you have the CSS file for custom styles
 
+// CustomerReviews component definition
 const CustomerReviews = ({ onAddReview, onEditReview, onDeleteReview, customerId, existingReviews }) => {
+
+  // State variables for managing modal visibility and form inputs
   const [showModal, setShowModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [foodRating, setFoodRating] = useState('');
@@ -17,13 +20,17 @@ const CustomerReviews = ({ onAddReview, onEditReview, onDeleteReview, customerId
   // Filter reviews for the specific customer
   const customerReviews = existingReviews.filter(review => review.customerId === customerId);
 
+  // Function to show the modal for adding a new review
   const handleOpenModal = () => setShowModal(true);
+
+  // Function to hide the modal for adding a new review and reset form fields
   const handleCloseModal = () => {
     setShowModal(false);
     setAlertMessage('');
     resetFormFields();
   };
 
+  // Function to show the modal for editing an existing review
   const handleOpenEditModal = (review) => {
     setEditReview(review);
     setFoodRating(review.foodRating);
@@ -34,6 +41,7 @@ const CustomerReviews = ({ onAddReview, onEditReview, onDeleteReview, customerId
     setShowEditModal(true);
   };
 
+   // Function to hide the modal for editing a review and reset form fields
   const handleCloseEditModal = () => {
     setShowEditModal(false);
     setEditReview(null);
@@ -41,6 +49,7 @@ const CustomerReviews = ({ onAddReview, onEditReview, onDeleteReview, customerId
     resetFormFields();
   };
 
+  // Function to reset all form fields
   const resetFormFields = () => {
     setFoodRating('');
     setServiceRating('');
@@ -49,6 +58,7 @@ const CustomerReviews = ({ onAddReview, onEditReview, onDeleteReview, customerId
     setComments('');
   };
 
+  // Function to handle form submission for adding a new review
   const handleSubmitReview = (e) => {
     e.preventDefault();
 
@@ -101,6 +111,7 @@ const CustomerReviews = ({ onAddReview, onEditReview, onDeleteReview, customerId
     handleCloseEditModal();
   };
 
+  // Function to handle deletion of a review
   const handleDeleteReview = (reviewId) => {
     if (window.confirm('Are you sure you want to delete this review?')) {
       onDeleteReview(reviewId);
