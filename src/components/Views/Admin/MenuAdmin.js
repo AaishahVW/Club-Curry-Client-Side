@@ -148,6 +148,7 @@ const MenuAdmin = () => {
     setShowDeleteModal(true);
   };
 
+
   const handleDeleteClose = () => setShowDeleteModal(false);
 
   const handleDelete = async () => {
@@ -177,6 +178,8 @@ const MenuAdmin = () => {
         await Promise.all(itemsToDelete.map(item => 
           axios.delete(`http://localhost:8080/ClubCurry/menuItem/delete/${item.id}`)
         ));
+        const respone = await axios.get(`http://localhost:8080/ClubCurry/menu/getByName/${categoryName}`)
+        await axios.delete(`http://localhost:8080/ClubCurry/menu/delete/${respone.data.id}`)
       }
 
       setStructuredMenu(prevStructuredMenu => {
