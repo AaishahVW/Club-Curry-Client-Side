@@ -67,7 +67,7 @@ body {
 
 .menu-admin-container {
   max-width: 800px;
-  margin-top: 50px;
+  margin: auto;
   padding: 20px;
   background-color: #0000008a;
   border-radius: 8px;
