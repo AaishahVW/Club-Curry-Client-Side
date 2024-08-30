@@ -1,0 +1,49 @@
+/* src/CSS/EmployeeHeader.css */
+
+/* Import the Indian font */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
+.navbar {
+  background-color: rgba(61, 14, 10, 0.9); /* Background color with transparency */
+  font-family: 'Baloo 2', cursive; /* Indian font for the navbar */
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff; /* White color for nav links */
+}
+
+.navbar-nav .nav-link.active {
+  color: #ff5c56; /* Light red color for the active link */
+  font-weight: bold; /* Make active link stand out */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff5c56; /* Light red color on hover */
+}
+
+/* Styling for buttons */
+.btn-outline-light {
+  border-color: #ffffff; /* White border color */
+  color: #ffffff; /* White text color */
+}
+
+.btn-outline-light:hover {
+  background-color: #ff5c56; /* Light red background color on hover */
+  color: #ffffff; /* White text color on hover */
+}
+
+/* Adjust button spacing */
+.buttons-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.buttons-container .btn {
+  margin-left: 1rem; /* Spacing between buttons */
+}
+
+/* Optional: Add a transition effect */
+.navbar-nav .nav-link, .btn-outline-light {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}

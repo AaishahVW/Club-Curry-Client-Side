@@ -1,0 +1,66 @@
+.order-header {
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: #962727;
+    border-radius: 10px;
+}
+
+.order-management-container {
+    padding: 20px;
+    text-align: center;
+    margin-left: 0;
+}
+
+.order-container {
+    margin-bottom: 20px;
+}
+
+.order-container th {
+    background-color: #0056b3;
+    color: #f4f4f4;
+}
+
+.collection-container th {
+    background-color: #02832d;
+    color: #f4f4f4;
+}
+
+.booking-container th {
+    background-color: #83025c;
+    color: #f4f4f4;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #afafaf;
+    text-align: center;
+    background-color: #e6e6e6;
+    color: #000;
+}
+
+th {
+    background-color: #f4f4f4;
+    color:black;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
