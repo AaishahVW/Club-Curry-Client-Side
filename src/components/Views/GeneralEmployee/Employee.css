@@ -102,6 +102,7 @@
     font-family: 'Chonburi', sans-serif;
     font-size: 3.5em;
     margin-bottom: 50px;
+    color: #fff;
 }
 
 .employee-main-content {
@@ -120,7 +121,7 @@
     padding: 0px;
     text-align: center;
     justify-content: center;
-    color: #fff;
+    color: #000;
 }
 
 .order-summary {

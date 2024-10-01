@@ -1,12 +1,13 @@
-/* OrderManagement.css */
-
 /* General styles */
 .order-management {
-  
     padding: 20px;
     font-family: Arial, sans-serif;
   }
   
+  .order-header {
+    color: #000;
+  }
+
   .search-bar {
     margin-bottom: 20px;
     padding: 10px;
