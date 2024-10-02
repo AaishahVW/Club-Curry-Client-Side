@@ -87,60 +87,90 @@ td select option {
   background-color: #103a7e;
 }
   
-  /* Modal styles */
-  .orders-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
+/* General modal styles */
+.orders-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.orders-modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal header */
+.orders-modal h2 {
+  margin: 0 0 15px;
+  font-size: 24px;
+  color: #333
+}
+
+/* Modal content styles */
+.modal-content {
+  margin-bottom: 20px;
+  font-size: 16px; 
+  color: #555;
+}
+
+/* Modal item list */
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.modal-content li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px; 
+  background-color: #f9f9f9;
+}
+
+/* Close button styles */
+.modal-close-btn {
+  background: #007bff;
+  color: white;
+  width: 150px;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Close button hover effect */
+.modal-close-btn:hover {
+  background: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .orders-modal {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 500px;
-    max-width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .modal-content {
-    margin-bottom: 20px;
-  }
-  
-  .modal-close-btn {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .modal-close-btn:hover {
-    background: #0056b3;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .orders-modal {
       width: 90%;
-    }
-  
-    .order-table {
-      font-size: 14px;
-    }
-  
-    .search-bar {
-      font-size: 14px;
-    }
   }
+
+  .modal-content {
+      font-size: 14px;
+  }
+
+  .modal-close-btn {
+      padding: 8px 12px;
+  }
+}
+
 
   
   
