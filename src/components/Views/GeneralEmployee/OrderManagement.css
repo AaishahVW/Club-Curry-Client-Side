@@ -2,6 +2,8 @@
 .order-management {
     padding: 20px;
     font-family: Arial, sans-serif;
+    width: 90%;
+    margin-left: 130px;
   }
   
   .order-header {
@@ -114,4 +116,6 @@
       font-size: 14px;
     }
   }
+
+  
   
