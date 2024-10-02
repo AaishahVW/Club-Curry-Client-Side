@@ -134,6 +134,11 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+.order-summary p {
+    text-align: center;
+    color: rgb(255, 0, 0);
+}
+
 .order-item {
     display: flex;
     justify-content: space-between;
@@ -198,7 +203,7 @@
 .btn-confirm-order {
     background-color: #10921b; 
     color: white;
-    width: 30%;
+    width: 40%;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -290,6 +295,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
+    
     justify-content: center;
     align-items: center;
     color: #000000;
@@ -300,8 +306,14 @@
     padding: 10px;
     border-radius: 5px;
     width: 80%;
-    max-width: 600px;
+    max-width: 400px;
     position: relative;
+}
+
+.employee-modal-content p {
+    padding: 20px 20px;
+    font-size: 1.1em;
+    text-align: center;
 }
 
 .employee-modal-content .close {
