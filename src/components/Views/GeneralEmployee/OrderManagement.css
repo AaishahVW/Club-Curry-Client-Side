@@ -36,7 +36,7 @@
   }
   
   .order-table th {
-   background-color:  rgba(116, 28, 37, 1);
+   background-color:  rgba(116, 28, 37);
 }
 
 td select {
@@ -66,15 +66,15 @@ td select option {
 
 .action-cell {
     display: flex;
-    justify-content: center; /* Horizontally center the button */
-    align-items: center; /* Vertically center the button */
+    justify-content: center; 
+    align-items: center; 
     height: 100%; 
 }
 
 .btn-view-details {
   background-color: #5884fc; 
   color: white;
-  padding: 10px 20px; /* Padding for size */
+  padding: 10px 20px; 
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -114,8 +114,20 @@ td select option {
 /* Modal header */
 .orders-modal h2 {
   margin: 0 0 15px;
+  font-size: 30px;
+  background-color:  rgba(116, 28, 37);
+  border-radius: 10px;
+  padding: 10px;
+  color: #ffffff
+}
+
+.orders-modal h3 {
+  margin: 0 0 15px;
   font-size: 24px;
-  color: #333
+  background-color:  rgba(116, 28, 37);
+  border-radius: 10px;
+  padding: 10px;
+  color: #ffffff
 }
 
 /* Modal content styles */
@@ -159,7 +171,7 @@ td select option {
 /* Responsive styles */
 @media (max-width: 768px) {
   .orders-modal {
-      width: 90%;
+      width: 50%;
   }
 
   .modal-content {
