@@ -139,6 +139,30 @@
     color: rgb(255, 0, 0);
 }
 
+.spice-lvl-dropdown {
+    width: 100%; 
+    padding: 10px 5px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Border changes on hover/focus */
+  .spice-lvl-dropdown:hover, 
+  .spice-lvl-dropdown:focus {
+    border-color: #5884fc; 
+    box-shadow: 0 0 8px rgba(88, 132, 252, 0.3); 
+    outline: none;
+  }
+  
+  .spice-lvl-dropdown option {
+    padding: 10px;
+  }
+
 .order-item {
     display: flex;
     justify-content: space-between;
@@ -436,7 +460,7 @@
 .employee-nav .active {
     font-weight: bold;
     color: #0056b3;
-}
+}  
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {

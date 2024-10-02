@@ -177,7 +177,7 @@ const Employee = () => {
                                         <td>R{item.price * item.quantity}</td>
                                         <td>
                                             {['Curries', 'Mains', 'Vegetarian'].includes(item.menu) ? (
-                                                <select 
+                                                <select class="spice-lvl-dropdown"
                                                     value={item.spiciness} 
                                                     onChange={(e) => updateSpiciness(index, e.target.value)}
                                                 >
