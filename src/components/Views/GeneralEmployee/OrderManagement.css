@@ -34,7 +34,30 @@
   }
   
   .order-table th {
-   background-color:  rgba(116, 28, 37, 1);;
+   background-color:  rgba(116, 28, 37, 1);
+}
+
+.action-cell {
+    display: flex;
+    justify-content: center; /* Horizontally center the button */
+    align-items: center; /* Vertically center the button */
+    height: 100%; 
+}
+
+.btn-view-details {
+  background-color: #5884fc; 
+  color: white;
+  padding: 10px 20px; /* Padding for size */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-view-details:hover {
+  background-color: #103a7e;
 }
   
   /* Modal styles */

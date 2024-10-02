@@ -129,8 +129,8 @@ const OrderManagement = () => {
                       ))}
                     </select>
                   </td>
-                  <td>
-                    <button onClick={() => handleViewDetails(order)}>
+                  <td class="action-cell">
+                    <button onClick={() => handleViewDetails(order)} class="btn-view-details">
                       View Details
                     </button>
                   </td>
@@ -180,8 +180,8 @@ const OrderManagement = () => {
                       ))}
                     </select>
                   </td>
-                  <td>
-                    <button onClick={() => handleViewDetails(order)}>
+                  <td class="action-cell">
+                    <button onClick={() => handleViewDetails(order)} class="btn-view-details">
                       View Details
                     </button>
                   </td>
@@ -229,8 +229,8 @@ const OrderManagement = () => {
                       ))}
                     </select>
                   </td>
-                  <td>
-                    <button onClick={() => handleViewDetails(order)}>
+                  <td class="action-cell">
+                    <button onClick={() => handleViewDetails(order)} class="btn-view-details">
                       View Details
                     </button>
                   </td>
