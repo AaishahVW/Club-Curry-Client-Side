@@ -263,6 +263,10 @@
     padding-left: 20px;
 }
 
+.order-card h4 {
+    font-weight: bold;
+}
+
 .order-table {
     width: 100%;
     border-collapse: collapse;
@@ -329,7 +333,6 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
-    
     justify-content: center;
     align-items: center;
     color: #000000;
@@ -397,12 +400,23 @@
 .employee-menu-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
     color: #000;
 }
 
+.employee-menu-item span {
+    flex: 1;
+    text-align: center; 
+}
+
+.employee-menu-item span:last-child {
+    text-align: right;
+}
+
 .employee-menu-item button {
-    background-color: #6ca4a7;
+    background-color: #10921b;
+    border-radius: 5px;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -410,8 +424,9 @@
 }
 
 .employee-menu-item button:hover {
-    background-color: #5a8a91;
+    background-color: #0a6914;
 }
+
 
 .employee-form-group {
     display: flex;
