@@ -208,9 +208,9 @@ const Employee = () => {
                         Checkout
                     </button>
                 </div>
-
+                <h2 className="orders-header">Orders</h2>
                 <div className="orders-section" id="orders-section">
-                    <h2 className="orders-header">Orders</h2>
+                    
                     {orders.map((order) => (
                         <div key={order.id} className="order-card">
                             <h4>Order #{order.id}</h4>

@@ -242,11 +242,25 @@
 }
 
 .orders-header {
+    padding-top: 10px;
     color: #000;
 }
 
 .orders-section {
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 20px; /* Space between items */
+}
+
+.order-card {
+    border: 2px solid #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #a5404a;
+    color: #fff;
+    border-radius: 10px;
+    padding-left: 20px;
 }
 
 .order-table {
@@ -305,15 +319,6 @@
 .btn-remove:hover {
     background-color: #c40000;
     transition: ease 0.3s;
-}
-
-.order-card {
-    border: 2px solid #3f3f3f;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f5f4f4;
-    color: #000;
-    border-radius: 10px;
 }
 
 .employee-modal {
