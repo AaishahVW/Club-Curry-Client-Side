@@ -31,7 +31,8 @@ const Employee = () => {
         { name: 'Mains', icon:  'fa-drumstick-bite'},
         { name: 'Drinks', icon: 'fa-glass-martini-alt' },
         { name: 'Desserts', icon: 'fa-ice-cream' },
-        { name: 'Specials', icon: 'fa-leaf' }
+        { name: 'Specials', icon: 'fa-star' }
+
     ];
 
     const menuItems = {
