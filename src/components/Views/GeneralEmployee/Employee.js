@@ -274,7 +274,7 @@ const Employee = () => {
                         <span className="close" onClick={() => setShowCheckoutModal(false)}>&times;</span>
                         <h2>Checkout</h2>
                         <p>Total Amount: R{calculateTotal()}</p>
-                        <button onClick={confirmOrder}>Confirm Order</button>
+                        <button onClick={confirmOrder} class="btn-confirm-order">Confirm Order</button>
                     </div>
                 </div>
             )}

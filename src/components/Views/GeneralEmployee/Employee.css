@@ -97,7 +97,6 @@
     color: #fff;
 }
 
-
 .employee-header {
     background: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%);
     font-family: 'Chonburi', sans-serif;
@@ -162,16 +161,16 @@
     height: 30px;
     margin: 0 5px; /* Add space between buttons */
     padding: 5px;
-    border: 1px solid #ddd; /* Light border for buttons */
-    background-color: #f8f9fa; /* Background color to match general styling */
-    border-radius: 5px; /* Rounded corners for buttons */
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 5px;
     cursor: pointer;
-    color: #333; /* Text color for buttons */
-    transition: background-color 0.2s ease; /* Smooth transition */
+    color: #333;
+    transition: background-color 0.2s ease;
 }
 
 .quantity-control button:hover {
-    background-color: #e2e6ea; /* Darker background on hover */
+    background-color: #e2e6ea; 
 }
 
 .total {
@@ -193,6 +192,23 @@
 }
 
 .emp-checkout-btn:hover {
+    background-color: #0a6914;
+}
+
+.btn-confirm-order {
+    background-color: #10921b; 
+    color: white;
+    width: 30%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-confirm-order:hover {
     background-color: #0a6914;
 }
 
