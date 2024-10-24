@@ -1,6 +1,6 @@
 import React from 'react';
 import './DriverCSS/CompletedDeliveries.css';
-import cDeliveries from '../../../images/cDeliveries.svg';
+import cDeliveries from '../../../images/cDeliveries.png';
 
 const CompletedDeliveries = () => {
   // Dummy data for completed deliveries

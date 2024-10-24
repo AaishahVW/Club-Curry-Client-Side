@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../Driver/DriverCSS/Deliveries.css';
-import PendingDeliveries from '../../../images/PendingDeliveries.svg';
+import PendingDeliveries from '../../../images/PendingDeliveries.png';
 
 const Deliveries = ({ deliveries = [], onUpdateStatus }) => {
   // Filter only pending deliveries

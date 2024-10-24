@@ -49,7 +49,7 @@ const ManageAdmin = () => {
 
     return (
         <div className="manage-admins-container">
-            <img src={adminm} className="admin-table-image" />
+            <img src={adminm} className="admin-table-image" alt="" />
             <button className="btn btn-primary mb-3" onClick={() => openModal()}>
                 Add New Admin
             </button>

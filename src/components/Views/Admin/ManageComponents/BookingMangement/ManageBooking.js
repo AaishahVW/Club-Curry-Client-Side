@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import BookingModal from './BookingModal'; // Import the BookingModal component
 import './ManageBooking.css'; // Importing CSS specific to ManageBooking
-import bookingm from '../../../../../images/bookingm.svg'
+import bookingm from '../../../../../images/bookingm.png'
 
 const ManageBooking = () => {
     const [bookings, setBookings] = useState([]);
@@ -47,7 +47,7 @@ const ManageBooking = () => {
 
     return (
         <div className="manage-bookings-container ">
-            <img src={bookingm} className="booking-table-image" />
+            <img src={bookingm} className="booking-table-image" alt="" />
             <button className="btn btn-primary" onClick={() => openModal()}>
                 Add New Booking
             </button>

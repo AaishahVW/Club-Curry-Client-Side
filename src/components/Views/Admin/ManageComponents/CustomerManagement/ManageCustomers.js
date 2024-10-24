@@ -67,7 +67,7 @@ const ManageCustomers = () => {
 
     return (
         <div className="customer-manage-container">
-            <img src={customerm} className="customer-table-image" />
+            <img src={customerm} className="customer-table-image" alt="" />
             <button className="customer-btn customer-btn-primary" onClick={handleAddClick}>Add Customer</button>
 
             {loading ? (

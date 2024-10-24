@@ -70,7 +70,7 @@ const ManageDriver = () => {
 
     return (
         <div className="manage-drivers-container">
-            <img src={driverm} className="driver-table-image" />
+            <img src={driverm} className="driver-table-image" alt="" />
             <button className="btn btn-primary mb-3" onClick={() => openModal()}>
                 Add New Driver
             </button>

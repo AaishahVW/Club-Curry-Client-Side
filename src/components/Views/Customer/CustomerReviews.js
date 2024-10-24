@@ -8,7 +8,7 @@ import review from '../../../images/review.svg';
 import QR from '../../../images/QR.png';
 import RestaurantDetails from "./RestaurantDetails";
 import FAQ from './FAQ';
-import yReviews from '../../../images/yReviews.svg'
+import yReviews from '../../../images/yReviews.png'
 
 
 // Mapping numeric ratings to enum values
@@ -110,7 +110,7 @@ const CustomerReviews = ({ onAddReview, onDeleteReview, customer }) => {
 
   return (
     <div className="review-section">
-      <img src={review} alt="review header" className="review-image" />
+      <img src={review} alt="review header" className="review-image"  />
 
       <div className="reviews-container">
       <img src={yReviews} className="reviews-section-image" />

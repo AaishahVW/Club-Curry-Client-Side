@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EmployeeModal from "./EmployeeModal";
 import "./ManageEmployee.css"; // CSS specific to ManageEmployee
-import employeem from '../../../../../images/employeem.svg'
+import employeem from '../../../../../images/employeem.png'
 
 const ManageEmployee = () => {
     const [employees, setEmployees] = useState([]); 
