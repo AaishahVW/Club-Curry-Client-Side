@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './OrderManagement.css';
 import axios from "axios";
+import orderManagement from '../../../images/orderManagement.svg';
 
 // Modal component for viewing details
 const OrdersModal = ({ order, onClose }) => {
@@ -9,8 +10,8 @@ const OrdersModal = ({ order, onClose }) => {
   return (
     <div className="orders-modal-overlay">
       <div className="orders-modal">
-        <h2>Order Details</h2>
-        <div className="modal-content">
+      <img src={orderManagement} className="order-table-image" />
+      <div className="modal-content">
           <p><strong>Order ID:</strong> {order.id}</p>
           <p><strong>Payment Type:</strong> {order.paymentMethod}</p>
           <p><strong>Customer Name:</strong> {order.cart.customer.name ? order.cart.customer.name : 'Walk-in Customer'}</p>

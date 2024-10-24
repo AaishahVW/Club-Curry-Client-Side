@@ -5,6 +5,11 @@
     width: 90%;
     margin-left: 130px;
   }
+
+  .order-table-image{
+    width: 100%;
+    margin-bottom: 20px;
+  }
   
   #OM-header {
     color: #fff;
