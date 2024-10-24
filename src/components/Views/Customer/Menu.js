@@ -8,7 +8,7 @@ const Menu = ({ addToCart }) => {
   const [showModal, setShowModal] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
   const [spiceLevel, setSpiceLevel] = useState('Mild');
-  const [notes, setNotes] = useState('');
+  const [note, setNotes] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [notification, setNotification] = useState('');
   
@@ -76,7 +76,7 @@ const Menu = ({ addToCart }) => {
   const handleClose = () => setShowModal(null);
 
   const handleAddToCart = () => {
-    addToCart({ ...selectedItem, spiceLevel, notes, quantity });
+    addToCart({menuItem:selectedItem, spiceLevel, note, quantity });
     setQuantity(1); // Reset quantity after adding to cart
     setNotes(''); // Reset notes after adding to cart
     setNotification(`Added ${quantity} ${selectedItem.name} to cart`);
@@ -141,10 +141,10 @@ const Menu = ({ addToCart }) => {
                   />
                   <Form.Check 
                     type="radio" 
-                    label="Medium to Hot" 
+                    label="MediumToHot" 
                     name="spiceLevel" 
-                    checked={spiceLevel === 'Medium to Hot'}
-                    onChange={() => setSpiceLevel('Medium to Hot')}
+                    checked={spiceLevel === 'MediumToHot'}
+                    onChange={() => setSpiceLevel('MediumToHot')}
                   />
                   <Form.Check 
                     type="radio" 
@@ -160,7 +160,7 @@ const Menu = ({ addToCart }) => {
                 <Form.Control 
                   as="textarea" 
                   rows={3} 
-                  value={notes}
+                  value={note}
                   onChange={(e) => setNotes(e.target.value)} 
                 />
               </Form.Group>

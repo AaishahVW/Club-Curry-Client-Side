@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Modal, Button, Accordion, Form, Alert } from "react-bootstrap";
 import { FaTrashAlt } from "react-icons/fa";
+import axios from 'axios';
 //import { useNavigate } from "react-router-dom";
 
 const Cart = ({
-  cartItems = [], // Default to an empty array to avoid undefined error
+  cartItems, // Default to an empty array to avoid undefined error
   onRemoveItem,
   onUpdateQuantity,
   onCheckout,
@@ -13,7 +14,10 @@ const Cart = ({
   isLoggedIn,
   onShowLogin,
   onShowSignup,
+  customer, // Add customer prop to access customer details. 
+
 }) => {
+  // State hooks for managing various input values
   const [orderType, setOrderType] = useState("");
   const [streetName, setStreetName] = useState("");
   const [streetNumber, setStreetNumber] = useState("");
@@ -22,17 +26,21 @@ const Cart = ({
   const [driverNote, setDriverNote] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [showLoginPrompt, setShowLoginPrompt] = useState(false);
+  
 
   //const navigate = useNavigate(); // Use navigate to redirect to home page
 
+  // Function to handle quantity change for an item
   const handleQuantityChange = (uniqueId, change) => {
     onUpdateQuantity(uniqueId, change);
   };
 
+   // Function to handle removal of an item from the cart
   const handleRemove = (uniqueId) => {
     onRemoveItem(uniqueId);
   };
 
+  // Function to calculate total price of items in the cart
   const getTotal = () => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -40,11 +48,13 @@ const Cart = ({
     );
   };
 
-  const handleCheckout = () => {
+  console.log(customer)
+  console.log(cartItems)
+  const handleCheckout = async () => {
     if (isLoggedIn) {
       if (
         !orderType ||
-        (orderType === "Delivery" &&
+        (orderType === "Delivery" && // If delivery, ensure all details are provided
           (!streetName ||
             !streetNumber ||
             !suburbName ||
@@ -55,11 +65,88 @@ const Cart = ({
         alert("Please complete all fields before proceeding.");
         return;
       }
-      onCheckout();
+
+      // NEW CODE !!!!!!
+
+    
+      try {
+        // Step 1: Save the Cart with only the customer
+        console.log(customer.email)
+
+        const cart = {
+          customer:{email:customer.email}
+         };
+        const cartResponse = await axios.post('http://localhost:8080/ClubCurry/cart/save', 
+        cart 
+        );
+
+        if (!cartResponse.data) throw new Error('Failed to save cart.');
+
+        const cartId = cartResponse.data.id; // Get the saved cart ID
+
+         const items = {
+          id: cartId,
+          items: cartItems.map(item => ({ // Map through each item in the cartItems array
+            menuItem: {
+              id: item.menuItem.id,
+              name: item.menuItem.name,
+              description: item.menuItem.description,
+              image: item.menuItem.image,
+              price: item.menuItem.price,
+            },
+            spiceLevel: item.spiceLevel,
+            note: item.note,
+            quantity: item.quantity,
+          })),
+        };
+
+         console.log(JSON.stringify(items, null, 2));
+        // Step 2: Update the Cart with items
+        const updateResponse = await axios.put('http://localhost:8080/ClubCurry/cart/updateItems', items); 
+         
+
+        if (!updateResponse.data) throw new Error('Failed to update cart items.');
+
+        
+        const cartObj = await axios.get(`http://localhost:8080/ClubCurry/cart/readByCustomer/${customer.email}`)
+        console.log('CartObj:', cartObj);
+
+        const isComplete = false
+         // Step 3: Prepare and log the order details
+      const orderDetails = {
+        cart: { id: cartId }, // Include the cart ID in the order object
+        orderType,
+        streetName,
+        streetNumber,
+        suburbName,
+        postalCode,
+        driverNote,
+        paymentMethod, 
+        isComplete       
+      };
+
+      console.log('Order Details:', JSON.stringify(orderDetails, null, 2)); // Log order details
+
+      // Save the Order
+      const orderResponse = await axios.post('http://localhost:8080/ClubCurry/orders/save', orderDetails);
+
+
+        if (orderResponse.status === 200) {
+          alert('Order placed successfully!');
+          onCheckout(); // Call the onCheckout function passed in props
+          onCloseCart(); // Close the cart modal after successful checkout
+        } else {
+          alert('Failed to place order. Please try again.');
+        }
+
+      }catch (error) {
+        console.error('Checkout error:', error);
+        alert('An error occurred during checkout. Please try again.');
+      }
     } else {
       setShowLoginPrompt(true);
-    }
-  };
+    } 
+  }; 
 
   const handleLoginPromptClose = () => {
     setShowLoginPrompt(false);
@@ -90,7 +177,7 @@ const Cart = ({
             <div className="cart-items">
               {cartItems.map((item) => (
                 <div key={item.uniqueId} className="cart-item">
-                  <img src={item.image} alt={item.name} />
+                   <img src={item.image} alt={item.name} />
                   <div className="cart-item-details">
                     <span>{item.name}</span>
                     <span>{item.spiceLevel}</span>
