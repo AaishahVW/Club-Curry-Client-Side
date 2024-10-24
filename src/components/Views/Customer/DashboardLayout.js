@@ -103,6 +103,7 @@ const DashboardLayout = ({ isLoggedIn, onLogout, decodedValue }) => {
         showCart={showCart}
         onCloseCart={handleCloseCart}
         isLoggedIn={isLoggedIn}
+        customer = {customer}
       />
     </div>
   );
